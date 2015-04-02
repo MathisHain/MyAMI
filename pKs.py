@@ -63,7 +63,7 @@ def calculate_gKs(Tc,Sal, mCa, mMg):
     gKHSO4 = 1/gamma_anion[6]/gammaT_Ht*gamma_anion[4]
 
     
-    return gKspC, gKspA, gK1, gK2, gKw, gKb, gK0, gKHSO4
+    return gKspC, gK1, gK2, gKw, gKb, gKspA, gK0, gKHSO4
 
 # "calculate_Ks" first calculates the activity coefficients (gammma), second the thermodynamic equilibrium constants, and third the predicted conditional equilibrium constants
 def calculate_Ks(Tc,Sal, mCa, mMg):
