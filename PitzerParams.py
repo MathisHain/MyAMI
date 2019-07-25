@@ -159,7 +159,11 @@ def SupplyParams(T): # assumes T [K] -- not T [degC]
     #Equation_MgHCO32 = numpy.array([0.329, 0.6072, 0.0]) # Harvie et al 1984
     Equation_MgHCO32 = numpy.array([0.03, 0.8, 0.0]) #Millero and Pierrot redetermined after Thurmond and Millero 1982
     Equation_CaHSO42 = numpy.array([0.2145, 2.53, 0.0]) 
-    Equation_CaHCO32 = numpy.array([0.4, 2.977, 0.0]) #numpy.array([0.2, 0.3,0]) He and Morse 1993 after Pitzeretal85 numpy.array([0.4, 2.977, 0.0])
+    
+    ### Correction of parameters:
+    Equation_CaHCO32 = numpy.array([0.2, 0.3,0])# XXX after He and Morse 1993 ### original version of MyAMI was using suspect paramerters numpy.array([0.4, 2.977, 0.0]) from Harvie et al 1984 (same as in Pitzeretal85) numpy.array([0.4, 2.977, 0.0])
+    ### See Comment Zeebe and Tyrrell (2018) and Response by Hain et al (2018) -- both published in GBC
+    
     Equation_CaOH2 = numpy.array([-0.1747, -0.2303, -5.72]) # according to Harvie84, the -5.72 should be for beta2, not Cphi (which is zero) -- but likely typo in original ref since 2:1 electrolytes don't usually have a beta2
     Equation_SrHSO42 = Equation_CaHSO42 
     Equation_SrHCO32 = Equation_CaHCO32 
