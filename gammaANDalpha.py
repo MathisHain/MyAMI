@@ -125,25 +125,25 @@ def CalculateGammaAndAlphas(Tc,S,I,m_cation,m_anion):
     for an in range(0,7):
         ln_gamma_anion[an] = Z_anion[an]*Z_anion[an]*(f_gamma + R) + Z_anion[an]*S
         if an==XX:
-            print ln_gamma_anion[an], "init"
+            print(ln_gamma_anion[an], "init")
         for cat in range(0,6):
             ln_gamma_anion[an] = ln_gamma_anion[an] + 2*m_cation[cat]*(BMX[cat,an]+ E_cat*CMX[cat,an])
             if an==XX:
-                print ln_gamma_anion[an], cat
+                print(ln_gamma_anion[an], cat)
         for an2 in range(0,7):
             ln_gamma_anion[an] = ln_gamma_anion[an] + m_anion[an2]*(2*Theta_negative[an,an2])
             if an==XX:
-                print ln_gamma_anion[an], an2
+                print(ln_gamma_anion[an], an2)
         for an2 in range(0,7):
             for cat in range(0,6):
                 ln_gamma_anion[an] = ln_gamma_anion[an] + m_anion[an2] * m_cation[cat] * Phi_NNP[an,an2,cat]
                 if an==XX:
-                    print ln_gamma_anion[an], an2, cat
+                    print(ln_gamma_anion[an], an2, cat)
         for cat in range(0,6):
             for cat2 in range(cat+1,6):
                 ln_gamma_anion[an] = ln_gamma_anion[an] + m_cation[cat]*m_cation[cat2]*Phi_PPN[cat,cat2,an]
                 if an==XX:
-                    print ln_gamma_anion[an], cat, cat2
+                    print(ln_gamma_anion[an], cat, cat2)
 
     gamma_cation = numpy.zeros(6)
     ln_gamma_cation = numpy.zeros(6)
@@ -153,25 +153,25 @@ def CalculateGammaAndAlphas(Tc,S,I,m_cation,m_anion):
     for cat in range(0,6):
         ln_gamma_cation[cat] = Z_cation[cat]*Z_cation[cat]*(f_gamma + R) + Z_cation[cat]*S
         if cat==XX:
-            print ln_gamma_cation[cat], "init"
+            print(ln_gamma_cation[cat], "init")
         for an in range(0,7):
             ln_gamma_cation[cat] = ln_gamma_cation[cat] + 2*m_anion[an]*(BMX[cat,an]+ E_cat*CMX[cat,an])
             if cat==XX:
-                print ln_gamma_cation[cat], an , BMX[cat,an], E_cat*CMX[cat,an]
+                print(ln_gamma_cation[cat], an , BMX[cat,an], E_cat*CMX[cat,an])
         for cat2 in range(0,6):
             ln_gamma_cation[cat] = ln_gamma_cation[cat] + m_cation[cat2]*(2*Theta_positive[cat,cat2])
             if cat==XX:
-                print ln_gamma_cation[cat], cat2
+                print(ln_gamma_cation[cat], cat2)
         for cat2 in range(0,6):
             for an in range(0,7):
                 ln_gamma_cation[cat] = ln_gamma_cation[cat] +  m_cation[cat2] * m_anion[an] * Phi_PPN[cat,cat2,an]
                 if cat==XX:
-                    print ln_gamma_cation[cat], cat2, an
+                    print(ln_gamma_cation[cat], cat2, an)
         for an in range(0,7):
             for an2 in range(an+1,7):
                 ln_gamma_cation[cat] = ln_gamma_cation[cat] + m_anion[an]*m_anion[an2]*Phi_NNP[an,an2,cat]
                 if cat==XX:
-                    print ln_gamma_cation[cat], an, an2
+                    print(ln_gamma_cation[cat], an, an2)
     for an in range(0,7):
         gamma_anion[an] = math.exp(ln_gamma_anion[an])
 
