@@ -1,3 +1,4 @@
+# just for demo
 # MyAMI Specific Ion Interaction Model (Version 1.0):
 # This is a Python script to calculate thermodynamic pK's and conditional pK's
 # Author: Mathis P. Hain -- m.p.hain@soton.ac.uk
